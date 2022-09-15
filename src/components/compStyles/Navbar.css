@@ -9,7 +9,7 @@
 
 .nav li a {
 	text-decoration: none;
-	color: #0d0d0d;
+	color: #fffcfc;
 	font-size: larger;
 }
 
@@ -17,7 +17,7 @@
 ul,
 li,
 a {
-	background-color: white;
+	background-color: rgb(196, 147, 240);
 }
 
 .navHome {

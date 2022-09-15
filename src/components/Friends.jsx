@@ -1,15 +1,7 @@
 import React from 'react';
 import './compStyles/Friends.css';
 import Navbar from './Navbar';
-
-// const Friends = () =>{
-// 	return(
-// 		<div>
-// 			<Navbar/>
-// 		</div>
-// 	);
-// };
-// export default Friends;
+import Footer from './Footer';
 
 const App = () => {
   const [todos, setTodos] = React.useState([]);
@@ -47,15 +39,6 @@ const App = () => {
     setTodos(updatedTodos);
   }
 
-  function toggleComplete(id) {
-    let updatedTodos = [...todos].map((todo) => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed;
-      }
-      return todo;
-    });
-    setTodos(updatedTodos);
-  }
 
   function submitEdits(id) {
     const updatedTodos = [...todos].map((todo) => {
@@ -69,6 +52,9 @@ const App = () => {
   }
 
   return (
+    <>
+    <Navbar/>
+  
     <div id="todo-list">
       <h1>Friends</h1>
       <form onSubmit={handleSubmit}>
@@ -82,12 +68,7 @@ const App = () => {
       {todos.map((todo) => (
         <div key={todo.id} className="todo">
           <div className="todo-text">
-            <input
-              type="checkbox"
-              id="completed"
-              checked={todo.completed}
-              onChange={() => toggleComplete(todo.id)}
-            />
+      
             {todo.id === todoEditing ? (
               <input
                 type="text"
@@ -109,6 +90,8 @@ const App = () => {
         </div>
       ))}
     </div>
+    <Footer/>
+    </>
   );
 };
 
